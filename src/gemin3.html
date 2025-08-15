@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VULCAN | Moda Streetwear e Oversized</title>
+    <meta name="description" content="Descubra as últimas tendências em moda streetwear e oversized na VULCAN. Peças exclusivas, calças, camisetas e acessórios para um estilo autêntico.">
+    <meta name="keywords" content="VULCAN, streetwear, oversized, moda, roupas, calças, pochetes, loja de roupa">
+    <meta name="author" content="VULCAN">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.vulcan.com/">
+    <meta property="og:title" content="VULCAN | Moda Streetwear e Oversized">
+    <meta property="og:description" content="Estilo autêntico com as coleções de streetwear e oversized da VULCAN.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1576995853123-5a10305d9340?q=80&w=1200&auto=format&fit=crop">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.vulcan.com/">
+    <meta property="twitter:title" content="VULCAN | Moda Streetwear e Oversized">
+    <meta property="twitter:description" content="Estilo autêntico com as coleções de streetwear e oversized da VULCAN.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1576995853123-5a10305d9340?q=80&w=1200&auto=format&fit=crop">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌋</text></svg>">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'vulcan-ash': '#111827',
+                        'vulcan-lava': '#FF4A4A',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* Estilo para a barra de rolagem (opcional, mas melhora a estética) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #111827;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #333;
+        }
+        /* Classe para o estado ativo do botão de filtro */
+        .filter-btn.active {
+            background-color: #111827;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-vulcan-ash font-sans antialiased">
+
+<header id="header" class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md z-50 transition-shadow duration-300 shadow-sm">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center h-20">
+            <a href="#" class="text-3xl font-black tracking-tighter text-vulcan-ash">VULCAN</a>
+
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#showcase" class="text-sm font-medium hover:text-vulcan-lava transition-colors">Novidades</a>
+                <a href="#collections" class="text-sm font-medium hover:text-vulcan-lava transition-colors">Coleções</a>
+                <a href="#bestsellers" class="text-sm font-medium hover:text-vulcan-lava transition-colors">Mais Vendidos</a>
+                <a href="#" class="bg-vulcan-ash text-white px-5 py-2 rounded-full text-sm font-bold hover:bg-vulcan-lava transition-colors">LOGIN</a>
+            </nav>
+
+            <button id="burger-menu" class="md:hidden z-50">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+    </div>
+</header>
+
+<div id="mobile-menu" class="fixed inset-0 bg-vulcan-ash/95 backdrop-blur-sm z-40 translate-x-full transition-transform duration-300 md:hidden">
+    <div class="flex flex-col items-center justify-center h-full space-y-8">
+        <a href="#showcase" class="mobile-link text-white text-2xl font-bold">Novidades</a>
+        <a href="#collections" class="mobile-link text-white text-2xl font-bold">Coleções</a>
+        <a href="#bestsellers" class="mobile-link text-white text-2xl font-bold">Mais Vendidos</a>
+        <a href="#" class="mt-8 bg-white text-vulcan-ash px-8 py-3 rounded-full text-lg font-bold">LOGIN</a>
+    </div>
+</div>
+
+
+<main class="pt-20">
+
+    <section id="hero" class="relative h-[calc(100vh-80px)] min-h-[500px] text-white flex items-center">
+        <div class="absolute inset-0 bg-black/50 z-10"></div>
+        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3"
+             alt="Modelo vestindo roupa da VULCAN em um ambiente urbano"
+             class="absolute inset-0 w-full h-full object-cover"
+             loading="eager" width="1480" height="987">
+
+        <div class="container mx-auto px-4 relative z-20 text-center">
+            <h1 id="hero-title" class="text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter">Estilo que <span class="text-vulcan-lava">Emerge</span>.</h1>
+            <p id="hero-subtitle" class="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-gray-200">
+                Nossas peças oversized e streetwear são feitas para quem se destaca na multidão.
+            </p>
+            <a id="hero-cta" href="#showcase" class="mt-8 inline-block bg-vulcan-lava text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest hover:bg-white hover:text-vulcan-lava transition-all duration-300 transform hover:scale-105">
+                Ver Coleção
+            </a>
+        </div>
+    </section>
+
+    <section id="categories" class="py-16 lg:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+                <div class="category-card group relative overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?q=80&w=987&auto=format&fit=crop" alt="Moda Masculina" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" width="987" height="1316">
+                    <div class="absolute inset-0 bg-black/40"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <h3 class="text-white text-3xl font-black uppercase">Homem</h3>
+                    </div>
+                    <a href="#showcase" class="absolute inset-0"></a>
+                </div>
+                <div class="category-card group relative overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1579328229893-6029a03133d1?q=80&w=987&auto=format&fit=crop" alt="Moda Feminina" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" width="987" height="1234">
+                    <div class="absolute inset-0 bg-black/40"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <h3 class="text-white text-3xl font-black uppercase">Mulher</h3>
+                    </div>
+                    <a href="#showcase" class="absolute inset-0"></a>
+                </div>
+                <div class="category-card group relative overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=80&w=1180&auto=format&fit=crop" alt="Acessórios" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" width="1180" height="787">
+                    <div class="absolute inset-0 bg-black/40"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <h3 class="text-white text-3xl font-black uppercase">Acessórios</h3>
+                    </div>
+                    <a href="#showcase" class="absolute inset-0"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="showcase" class="py-16 lg:py-24">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="section-title text-3xl md:text-4xl font-black tracking-tighter">Nossa Vitrine</h2>
+                <p class="section-subtitle mt-2 text-gray-500">Explore as peças que estão definindo o estilo VULCAN.</p>
+            </div>
+
+            <div id="filter-buttons" class="flex flex-wrap justify-center gap-2 md:gap-4 mb-12">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="oversized">Oversized</button>
+                <button class="filter-btn" data-filter="streetwear">Streetwear</button>
+                <button class="filter-btn" data-filter="calcas">Calças</button>
+                <button class="filter-btn" data-filter="pochetes">Pochetes</button>
+            </div>
+
+            <div id="product-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
+                <div class="product-item" data-category="oversized">
+                    <div class="group relative overflow-hidden rounded-lg bg-white shadow-sm hover:shadow-xl transition-shadow duration-300">
+                        <img src="https://images.unsplash.com/photo-1622521953450-7b2ba0763e62?q=80&w=987&auto=format&fit=crop" alt="Camiseta Oversized VULCAN" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" width="987" height="1234">
+                        <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/50 to-transparent p-4">
+                            <h3 class="font-bold text-white">Camiseta Oversized "Magma"</h3>
+                            <p class="text-sm text-vulcan-lava font-semibold">R$ 189,90</p>
+                        </div>
+                        <a href="#" class="absolute inset-0"></a>
+                    </div>
+                </div>
+                <div class="product-item" data-category="streetwear">
+                    <div class="group relative overflow-hidden rounded-lg bg-white shadow-sm hover:shadow-xl transition-shadow duration-300">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1470&auto=format&fit=crop" alt="Tênis Streetwear" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" width="1470" height="980">
+                        <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/50 to-transparent p-4">
+                            <h3 class="font-bold text-white">Tênis VULCAN "Flow"</h3>
+                            <p class="text-sm text-vulcan-lava font-semibold">R$ 499,90</p>
+                        </div>
+                        <a href="#" class="absolute inset-0"></a>
+                    </div>
+                </div>
+                <div class="product-item" data-category="calcas">
+                    <div class="group relative overflow-hidden rounded-lg bg-white shadow-sm hover:shadow-xl transition-shadow duration-300">
+                        <img src="https://images.unsplash.com/photo-1604176354204-926873782855?q=80&w=987&auto=format&fit=crop" alt="Calça Cargo" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" width="987" height="1234">
+                        <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/50 to-transparent p-4">
+                            <h3 class="font-bold text-white">Calça Cargo "Rift"</h3>
+                            <p class="text-sm text-vulcan-lava font-semibold">R$ 299,90</p>
+                        </div>
+                        <a href="#" class="absolute inset-0"></a>
+                    </div>
+                </div>
+                <div class="product-item" data-category="pochetes">
+                    <div class="group relative overflow-hidden rounded-lg bg-white shadow-sm hover:shadow-xl transition-shadow duration-300">
+                        <img src="https://images.unsplash.com/photo-1579752227286-a79ea93b3f2a?q=80&w=987&auto=format&fit=crop" alt="Pochete VULCAN" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" width="987" height="1234">
+                        <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/50 to-transparent p-4">
+                            <h3 class="font-bold text-white">Pochete "Crater"</h3>
+                            <p class="text-sm text-vulcan-lava font-semibold">R$ 149,90</p>
+                        </div>
+                        <a href="#" class="absolute inset-0"></a>
+                    </div>
+                </div>
+                <div class="product-item" data-category="oversized">
+                    <div class="group relative overflow-hidden rounded-lg bg-white shadow-sm hover:shadow-xl transition-shadow duration-300">
+                        <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1470&auto=format&fit=crop" alt="Moletom Oversized VULCAN" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" width="1470" height="980">
+                        <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/50 to-transparent p-4">
+                            <h3 class="font-bold text-white">Moletom Oversized "Ash"</h3>
+                            <p class="text-sm text-vulcan-lava font-semibold">R$ 349,90</p>
+                        </div>
+                        <a href="#" class="absolute inset-0"></a>
+                    </div>
+                </div>
+                <div class="product-item" data-category="streetwear">
+                    <div class="group relative overflow-hidden rounded-lg bg-white shadow-sm hover:shadow-xl transition-shadow duration-300">
+                        <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=1015&auto=format&fit=crop" alt="Camiseta Streetwear" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" width="1015" height="1269">
+                        <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/50 to-transparent p-4">
+                            <h3 class="font-bold text-white">Camiseta Street "Core"</h3>
+                            <p class="text-sm text-vulcan-lava font-semibold">R$ 159,90</p>
+                        </div>
+                        <a href="#" class="absolute inset-0"></a>
+                    </div>
+                </div>
+                <div class="product-item" data-category="calcas">
+                    <div class="group relative overflow-hidden rounded-lg bg-white shadow-sm hover:shadow-xl transition-shadow duration-300">
+                        <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=987&auto=format&fit=crop" alt="Calça Jeans" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" width="987" height="1481">
+                        <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/50 to-transparent p-4">
+                            <h3 class="font-bold text-white">Calça Jeans "Stone"</h3>
+                            <p class="text-sm text-vulcan-lava font-semibold">R$ 279,90</p>
+                        </div>
+                        <a href="#" class="absolute inset-0"></a>
+                    </div>
+                </div>
+                <div class="product-item" data-category="oversized">
+                    <div class="group relative overflow-hidden rounded-lg bg-white shadow-sm hover:shadow-xl transition-shadow duration-300">
+                        <img src="https://images.unsplash.com/photo-1576995853123-5a10305d9340?q=80&w=1470&auto=format&fit=crop" alt="Jaqueta VULCAN" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" width="1470" height="980">
+                        <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/50 to-transparent p-4">
+                            <h3 class="font-bold text-white">Jaqueta Puffer "Obsidian"</h3>
+                            <p class="text-sm text-vulcan-lava font-semibold">R$ 599,90</p>
+                        </div>
+                        <a href="#" class="absolute inset-0"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="promo" class="py-16 lg:py-24 bg-vulcan-ash">
+        <div class="container mx-auto px-4">
+            <div class="promo-banner bg-cover bg-center rounded-lg text-white p-8 md:p-16 flex items-center" style="background-image: url('https://images.unsplash.com/photo-1515555230216-82228b88ea98?q=80&w=1380&auto=format&fit=crop')">
+                <div class="max-w-md">
+                    <h2 class="text-3xl md:text-4xl font-black uppercase">MID SEASON SALE</h2>
+                    <p class="mt-4 text-lg">Até 40% OFF em peças selecionadas. Renove seu estilo com a VULCAN.</p>
+                    <a href="#showcase" class="mt-6 inline-block bg-vulcan-lava text-white px-8 py-3 rounded-full font-bold uppercase tracking-widest hover:bg-white hover:text-vulcan-lava transition-colors">
+                        Aproveitar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="collections" class="py-16 lg:py-24">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="section-title text-3xl md:text-4xl font-black tracking-tighter">Coleções VULCAN</h2>
+                <p class="section-subtitle mt-2 text-gray-500">Cada coleção, uma nova história para contar.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="collection-item group relative h-96 flex items-end p-6 rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1611005065447-452fdb304c4c?q=80&w=987&auto=format&fit=crop" alt="Coleção Inverno" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" width="987" height="1234">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="relative text-white">
+                        <h3 class="text-2xl font-bold">Coleção Inverno '25</h3>
+                        <p class="text-sm">Conforto e estilo para os dias frios.</p>
+                    </div>
+                    <a href="#" class="absolute inset-0"></a>
+                </div>
+                <div class="collection-item group relative h-96 flex items-end p-6 rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1564148123282-5368a5311900?q=80&w=987&auto=format&fit=crop" alt="Coleção Verão" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" width="987" height="1234">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="relative text-white">
+                        <h3 class="text-2xl font-bold">Coleção Verão '26</h3>
+                        <p class="text-sm">Leveza e atitude sob o sol.</p>
+                    </div>
+                    <a href="#" class="absolute inset-0"></a>
+                </div>
+                <div class="collection-item group relative h-96 flex items-end p-6 rounded-lg overflow-hidden md:col-span-2 lg:col-span-1">
+                    <img src="https://images.unsplash.com/photo-1545241047-6083a36c4235?q=80&w=987&auto=format&fit=crop" alt="Coleção Streetwear" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" width="987" height="1234">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="relative text-white">
+                        <h3 class="text-2xl font-bold">Essenciais Streetwear</h3>
+                        <p class="text-sm">Peças-chave para qualquer rolê.</p>
+                    </div>
+                    <a href="#" class="absolute inset-0"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="bestsellers" class="py-16 lg:py-24 bg-white overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="section-title text-3xl md:text-4xl font-black tracking-tighter">Os Mais Vendidos</h2>
+                <p class="section-subtitle mt-2 text-gray-500">As peças que nossos clientes não se cansam.</p>
+            </div>
+
+            <div class="relative">
+                <div id="carousel-wrapper" class="flex transition-transform duration-500 ease-in-out -mx-4">
+                </div>
+
+                <button id="prev-btn" class="absolute top-1/2 left-0 md:-left-4 -translate-y-1/2 bg-white/80 hover:bg-white p-3 rounded-full shadow-md z-10 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-vulcan-ash" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+                </button>
+                <button id="next-btn" class="absolute top-1/2 right-0 md:-right-4 -translate-y-1/2 bg-white/80 hover:bg-white p-3 rounded-full shadow-md z-10 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-vulcan-ash" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="py-16 lg:py-24">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="section-title text-3xl md:text-4xl font-black tracking-tighter">O Que Dizem Sobre Nós</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="testimonial-card bg-white p-8 rounded-lg shadow-sm">
+                    <p class="text-gray-600">"A qualidade da camiseta oversized é surreal. Caimento perfeito e tecido muito confortável. Virou minha peça favorita!"</p>
+                    <div class="flex items-center mt-6">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-12 h-12 rounded-full object-cover" alt="Avatar cliente 1" loading="lazy">
+                        <div class="ml-4">
+                            <p class="font-bold">Lucas M.</p>
+                            <div class="flex text-yellow-400">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card bg-white p-8 rounded-lg shadow-sm">
+                    <p class="text-gray-600">"Entrega super rápida e a calça cargo é exatamente como na foto. Material resistente e cheia de estilo. Recomendo muito!"</p>
+                    <div class="flex items-center mt-6">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-12 h-12 rounded-full object-cover" alt="Avatar cliente 2" loading="lazy">
+                        <div class="ml-4">
+                            <p class="font-bold">Juliana S.</p>
+                            <div class="flex text-yellow-400">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card bg-white p-8 rounded-lg shadow-sm">
+                    <p class="text-gray-600">"Finalmente uma marca que entende de streetwear de verdade no Brasil. As peças são autênticas. Já estou de olho no próximo drop."</p>
+                    <div class="flex items-center mt-6">
+                        <img src="https://randomuser.me/api/portraits/men/36.jpg" class="w-12 h-12 rounded-full object-cover" alt="Avatar cliente 3" loading="lazy">
+                        <div class="ml-4">
+                            <p class="font-bold">Rafael P.</p>
+                            <div class="flex text-yellow-400">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="instagram" class="py-16 lg:py-24 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="section-title text-3xl md:text-4xl font-black tracking-tighter">Siga @VULCAN</h2>
+            <p class="section-subtitle mt-2 mb-12 text-gray-500">Acompanhe nossos lançamentos e inspirações no Instagram.</p>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2">
+                <a href="#" class="group block overflow-hidden"><img src="https://images.unsplash.com/photo-1551803091-e373c26713de?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" loading="lazy" alt="Post Instagram 1"></a>
+                <a href="#" class="group block overflow-hidden"><img src="https://images.unsplash.com/photo-1549298244-20c6a8a3a842?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" loading="lazy" alt="Post Instagram 2"></a>
+                <a href="#" class="group block overflow-hidden"><img src="https://images.unsplash.com/photo-1574291814206-363acdf2aa77?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" loading="lazy" alt="Post Instagram 3"></a>
+                <a href="#" class="group block overflow-hidden"><img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" loading="lazy" alt="Post Instagram 4"></a>
+                <a href="#" class="group block overflow-hidden"><img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" loading="lazy" alt="Post Instagram 5"></a>
+                <a href="#" class="group block overflow-hidden"><img src="https://images.unsplash.com/photo-1516257984-b1b4d707412e?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" loading="lazy" alt="Post Instagram 6"></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="final-cta" class="bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1607431335277-937293551d45?q=80&w=1500&auto=format&fit=crop');">
+        <div class="bg-black/70 py-16 lg:py-24">
+            <div class="container mx-auto px-4 text-center text-white">
+                <h2 class="text-3xl md:text-4xl font-black uppercase">Junte-se à Nação VULCAN</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-300">
+                    Cadastre-se e ganhe <span class="text-vulcan-lava font-bold">15% de desconto</span> na sua primeira compra, além de acesso exclusivo a lançamentos e promos.
+                </p>
+                <form class="mt-8 max-w-lg mx-auto flex flex-col sm:flex-row gap-4">
+                    <input type="email" placeholder="Seu melhor e-mail" required class="w-full px-5 py-3 rounded-full text-vulcan-ash placeholder-gray-500 border-2 border-transparent focus:outline-none focus:border-vulcan-lava">
+                    <button type="submit" class="bg-vulcan-lava text-white px-8 py-3 rounded-full font-bold uppercase tracking-widest hover:bg-white hover:text-vulcan-lava transition-colors duration-300">
+                        Inscrever
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-vulcan-ash text-white">
+    <div class="container mx-auto px-4 py-16">
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
+            <div class="col-span-2 lg:col-span-1">
+                <h3 class="text-2xl font-black tracking-tighter">VULCAN</h3>
+                <p class="mt-4 text-sm text-gray-400">Estilo que emerge.</p>
+                <div class="flex space-x-4 mt-6">
+                    <a href="#" class="hover:text-vulcan-lava transition-colors"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.59 0 0 .59 0 1.325v21.35C0 23.41.59 24 1.325 24H12.82v-9.29H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h5.698c.735 0 1.325-.59 1.325-1.325V1.325C24 .59 23.41 0 22.675 0z"/></svg></a>
+                    <a href="#" class="hover:text-vulcan-lava transition-colors"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.012 3.584-.07 4.85c-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.012-3.584.07-4.85C2.253 3.854 3.778 2.31 7.031 2.163 8.297 2.11 8.677 2.1 12 2.1m0-2.1c-3.273 0-3.66.014-4.944.076C3.373.238.891 2.72.738 6.075.682 7.35.668 7.73.668 12s.014 4.65.076 5.925c.153 3.354 2.635 5.836 6.001 5.999 1.284.062 1.67.076 4.944.076s3.66-.014 4.944-.076c3.366-.163 5.848-2.645 5.999-6.001.062-1.275.076-1.65.076-4.925s-.014-4.65-.076-5.925C23.109 2.719 20.627.237 17.262.075 15.98.014 15.6 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg></a>
+                    <a href="#" class="hover:text-vulcan-lava transition-colors"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.223.085a4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg></a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="font-bold uppercase tracking-wider">Loja</h4>
+                <ul class="mt-4 space-y-2 text-sm text-gray-400">
+                    <li><a href="#" class="hover:text-white transition-colors">Homem</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Mulher</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Acessórios</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Promoções</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold uppercase tracking-wider">Ajuda</h4>
+                <ul class="mt-4 space-y-2 text-sm text-gray-400">
+                    <li><a href="#" class="hover:text-white transition-colors">Fale Conosco</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Dúvidas Frequentes</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Trocas e Devoluções</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Rastrear Pedido</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold uppercase tracking-wider">Institucional</h4>
+                <ul class="mt-4 space-y-2 text-sm text-gray-400">
+                    <li><a href="#" class="hover:text-white transition-colors">Sobre Nós</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Política de Privacidade</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Termos de Uso</a></li>
+                </ul>
+            </div>
+            <div class="col-span-2 md:col-span-1">
+                <h4 class="font-bold uppercase tracking-wider">Contato</h4>
+                <ul class="mt-4 space-y-2 text-sm text-gray-400">
+                    <li>Email: contato@vulcan.com</li>
+                    <li>Whatsapp: (11) 99999-8888</li>
+                    <li>Atendimento: Seg-Sex, 9h-18h</li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-12 pt-8 border-t border-gray-700 text-center text-sm text-gray-500">
+            <p>&copy; 2025 VULCAN. Todos os direitos reservados. Feito com 🌋 por um dev sênior.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+        // Registrar o plugin ScrollTrigger do GSAP
+        gsap.registerPlugin(ScrollTrigger);
+
+        // --- ANIMAÇÃO DO HEADER ---
+        // Adicionar sombra ao header no scroll
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-lg');
+            } else {
+                header.classList.remove('shadow-lg');
+            }
+        });
+
+        // --- MENU MOBILE ---
+        const burgerMenu = document.getElementById('burger-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        burgerMenu.addEventListener('click', () => {
+            mobileMenu.classList.toggle('translate-x-full');
+            document.body.classList.toggle('overflow-hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+                document.body.classList.remove('overflow-hidden');
+            });
+        });
+
+        // --- FILTRO DE PRODUTOS DINÂMICO ---
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const productGrid = document.getElementById('product-grid');
+        const productItems = Array.from(productGrid.children);
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.dataset.filter;
+
+                // Atualiza o estado ativo do botão
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                // Animação de filtro com GSAP
+                const tl = gsap.timeline();
+
+                // 1. Esconde os itens que não correspondem
+                const itemsToHide = productItems.filter(item => !item.dataset.category.includes(filter) && filter !== 'all');
+                if (itemsToHide.length > 0) {
+                    tl.to(itemsToHide, {
+                        opacity: 0,
+                        scale: 0.9,
+                        duration: 0.3,
+                        stagger: 0.05,
+                        onComplete: () => {
+                            itemsToHide.forEach(item => item.style.display = 'none');
+                        }
+                    });
+                }
+
+                // 2. Mostra os itens que correspondem
+                const itemsToShow = filter === 'all'
+                    ? productItems
+                    : productItems.filter(item => item.dataset.category.includes(filter));
+
+                // Prepara os itens para a animação de entrada
+                itemsToShow.forEach(item => {
+                    item.style.display = 'block';
+                    item.style.opacity = 0;
+                });
+
+                tl.to(itemsToShow, {
+                    opacity: 1,
+                    scale: 1,
+                    duration: 0.3,
+                    stagger: 0.05
+                }, ">-0.2"); // Começa um pouco antes da animação anterior terminar
+            });
+        });
+
+
+        // --- CARROSSEL MAIS VENDIDOS ---
+        const carouselWrapper = document.getElementById('carousel-wrapper');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+
+        // Clona os produtos da vitrine para usar no carrossel
+        const carouselItems = productItems.slice(0, 8).map(item => {
+            const clone = item.cloneNode(true);
+            clone.classList.add('carousel-item', 'w-1/2', 'md:w-1/3', 'lg:w-1/4', 'flex-shrink-0', 'px-4');
+            return clone;
+        });
+
+        // Lógica para loop infinito
+        const totalSlides = carouselItems.length;
+        const slidesToClone = 4; // Número de slides para clonar para garantir loop suave
+
+        // Adiciona clones no final
+        for(let i=0; i < slidesToClone; i++) {
+            carouselWrapper.appendChild(carouselItems[i].cloneNode(true));
+        }
+        // Adiciona clones no início
+        for(let i=totalSlides - 1; i >= totalSlides - slidesToClone; i--) {
+            carouselWrapper.prepend(carouselItems[i].cloneNode(true));
+        }
+
+        carouselItems.forEach(item => carouselWrapper.appendChild(item));
+
+        const allCarouselItems = carouselWrapper.children;
+        const slideWidth = allCarouselItems[0].getBoundingClientRect().width;
+        let currentIndex = slidesToClone;
+
+        function updateCarouselPosition(transition = true) {
+            carouselWrapper.style.transition = transition ? 'transform 0.5s ease-in-out' : 'none';
+            carouselWrapper.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        }
+
+        // Posição inicial
+        updateCarouselPosition();
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex++;
+            updateCarouselPosition();
+
+            if (currentIndex === totalSlides + slidesToClone) {
+                setTimeout(() => {
+                    currentIndex = slidesToClone;
+                    updateCarouselPosition(false);
+                }, 500);
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex--;
+            updateCarouselPosition();
+
+            if (currentIndex === slidesToClone - 1) {
+                setTimeout(() => {
+                    currentIndex = totalSlides + slidesToClone - 1;
+                    updateCarouselPosition(false);
+                }, 500);
+            }
+        });
+
+        // Recalcular no resize da janela
+        window.addEventListener('resize', () => {
+            const newSlideWidth = allCarouselItems[0].getBoundingClientRect().width;
+            carouselWrapper.style.transform = `translateX(-${currentIndex * newSlideWidth}px)`;
+        });
+
+        // --- ANIMAÇÕES COM GSAP E SCROLLTRIGGER ---
+
+        // Animação do Hero na entrada
+        gsap.from("#hero-title", { opacity: 0, y: 30, duration: 0.8, delay: 0.2 });
+        gsap.from("#hero-subtitle", { opacity: 0, y: 30, duration: 0.8, delay: 0.4 });
+        gsap.from("#hero-cta", { opacity: 0, y: 30, duration: 0.8, delay: 0.6 });
+
+        // Animação de entrada suave para títulos de seção
+        gsap.utils.toArray('.section-title, .section-subtitle').forEach(elem => {
+            gsap.from(elem, {
+                scrollTrigger: {
+                    trigger: elem,
+                    start: "top 90%",
+                    toggleActions: "play none none none"
+                },
+                opacity: 0,
+                y: 40,
+                duration: 0.8
+            });
+        });
+
+        // Animação para cards (categorias, coleções, depoimentos)
+        gsap.utils.toArray('.category-card, .collection-item, .testimonial-card, .promo-banner').forEach(card => {
+            gsap.from(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 90%",
+                    toggleActions: "play none none none"
+                },
+                opacity: 0,
+                y: 50,
+                duration: 0.8,
+                stagger: 0.2
+            });
+        });
+
+        // Hover sutil nos cards de produto (adicionado via JS para não poluir o HTML)
+        gsap.utils.toArray('.product-item').forEach(card => {
+            const img = card.querySelector('img');
+            const tl = gsap.timeline({ paused: true });
+
+            tl.to(img, { scale: 1.1, duration: 0.5, ease: 'power2.out' });
+
+            card.addEventListener('mouseenter', () => tl.play());
+            card.addEventListener('mouseleave', () => tl.reverse());
+        });
+
+        // Animação do feed do Instagram
+        gsap.from("#instagram img", {
+            scrollTrigger: {
+                trigger: "#instagram",
+                start: "top 80%",
+            },
+            opacity: 0,
+            scale: 0.8,
+            y: 50,
+            stagger: 0.1,
+            duration: 0.6
+        });
+
+    });
+</script>
+</body>
+</html>

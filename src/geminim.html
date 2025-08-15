@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VULCAN | Moda e Estilo Para Todos</title>
+    <meta name="description" content="Descubra as últimas tendências da moda na VULCAN. Roupas, acessórios e muito mais para homens e mulheres com estilo. Compre agora!">
+    <meta name="keywords" content="VULCAN, moda, roupas, estilo, comprar online, feminino, masculino, acessórios">
+    <meta name="author" content="VULCAN">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.vulcan.com/">
+    <meta property="og:title" content="VULCAN | Moda e Estilo Para Todos">
+    <meta property="og:description" content="Descubra as últimas tendências da moda na VULCAN.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?w=800&q=80"> <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.vulcan.com/">
+    <meta property="twitter:title" content="VULCAN | Moda e Estilo Para Todos">
+    <meta property="twitter:description" content="Descubra as últimas tendências da moda na VULCAN.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?w=800&q=80"> <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌋</text></svg>">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Configuração customizada do Tailwind (opcional, mas recomendado)
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'vulcan-dark': '#1a1a1a',
+                        'vulcan-light': '#f5f5f5',
+                        'vulcan-accent': '#e53e3e',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+
+    <style>
+        /* Estilos adicionais para garantir performance e evitar CLS */
+        /* Garante que o conteúdo animado comece invisível para evitar 'flickering' */
+        .gsap-reveal {
+        }
+        /* Para evitar CLS no hero, definimos uma altura mínima.
+           Isso pode ser ajustado com base na imagem. */
+        .hero-section {
+            min-height: 85vh;
+        }
+        @media (min-width: 768px) {
+            .hero-section {
+                min-height: 90vh;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-vulcan-light text-vulcan-dark font-sans antialiased">
+
+<header id="header" class="bg-white/80 backdrop-blur-md fixed top-0 left-0 w-full z-50 shadow-sm">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <div class="flex-shrink-0">
+                <a href="#" class="text-2xl font-black tracking-tighter text-vulcan-dark uppercase" aria-label="VULCAN Home">
+                    VULCAN
+                </a>
+            </div>
+
+            <nav class="hidden md:flex md:items-center md:space-x-8">
+                <a href="#masculino" class="text-sm font-medium text-gray-600 hover:text-vulcan-accent transition-colors duration-300">Masculino</a>
+                <a href="#feminino" class="text-sm font-medium text-gray-600 hover:text-vulcan-accent transition-colors duration-300">Feminino</a>
+                <a href="#acessorios" class="text-sm font-medium text-gray-600 hover:text-vulcan-accent transition-colors duration-300">Acessórios</a>
+                <a href="#novidades" class="text-sm font-medium text-gray-600 hover:text-vulcan-accent transition-colors duration-300">Novidades</a>
+            </nav>
+
+            <div class="flex items-center">
+                <a href="#" class="hidden sm:inline-block bg-vulcan-dark text-white text-sm font-bold py-2 px-5 rounded-full hover:bg-vulcan-accent transition-colors duration-300">
+                    Promoções
+                </a>
+                <button id="mobile-menu-button" class="md:hidden ml-4 p-2 rounded-md text-gray-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-vulcan-dark" aria-label="Abrir menu">
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-gray-200">
+            <a href="#masculino" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-vulcan-accent hover:bg-gray-50">Masculino</a>
+            <a href="#feminino" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-vulcan-accent hover:bg-gray-50">Feminino</a>
+            <a href="#acessorios" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-vulcan-accent hover:bg-gray-50">Acessórios</a>
+            <a href="#novidades" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-vulcan-accent hover:bg-gray-50">Novidades</a>
+            <a href="#" class="block w-full text-left mt-2 px-3 py-3 rounded-md text-base font-bold bg-vulcan-dark text-white hover:bg-vulcan-accent">
+                Ver Promoções
+            </a>
+        </div>
+    </div>
+</header>
+
+<main>
+
+    <section class="hero-section relative bg-cover bg-center bg-no-repeat flex items-center" style="background-image: url('https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=2071&auto=format&fit=crop');">
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="relative container mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+            <div class="gsap-reveal">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter">
+                    Estilo que <span class="text-vulcan-accent">Inspira</span>
+                </h1>
+            </div>
+            <div class="gsap-reveal">
+                <p class="mt-4 max-w-xl mx-auto text-base md:text-lg text-gray-200">
+                    Coleções pensadas para quem vive a moda com intensidade e atitude.
+                </p>
+            </div>
+            <div class="mt-8 gsap-reveal">
+                <a href="#produtos" class="inline-block bg-vulcan-accent text-white font-bold uppercase tracking-wider py-3 px-8 rounded-full text-lg hover:bg-red-700 transform hover:scale-105 transition-all duration-300">
+                    Compre Agora
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="categorias" class="py-16 sm:py-24 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 gsap-reveal-section">
+                <h2 class="text-3xl md:text-4xl font-black tracking-tighter text-vulcan-dark">Nossas Categorias</h2>
+                <p class="mt-2 text-gray-600 max-w-md mx-auto">Encontre exatamente o que você procura.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                <div class="group relative overflow-hidden rounded-lg shadow-lg gsap-reveal-section">
+                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1887&auto=format&fit=crop" alt="Modelo masculino vestindo roupas da VULCAN" loading="lazy" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/40"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <a href="#masculino" class="text-white text-2xl font-bold uppercase border-2 border-white py-3 px-8 hover:bg-white hover:text-vulcan-dark transition-colors duration-300">Masculino</a>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-lg shadow-lg gsap-reveal-section">
+                    <img src="https://images.unsplash.com/photo-1581044777550-4cfa6ce24862?q=80&w=1886&auto=format&fit=crop" alt="Modelo feminina vestindo roupas da VULCAN" loading="lazy" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/40"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <a href="#feminino" class="text-white text-2xl font-bold uppercase border-2 border-white py-3 px-8 hover:bg-white hover:text-vulcan-dark transition-colors duration-300">Feminino</a>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-lg shadow-lg gsap-reveal-section">
+                    <img src="https://images.unsplash.com/photo-1591561939102-4213192e4431?q=80&w=1887&auto=format&fit=crop" alt="Acessórios da VULCAN" loading="lazy" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/40"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <a href="#acessorios" class="text-white text-2xl font-bold uppercase border-2 border-white py-3 px-8 hover:bg-white hover:text-vulcan-dark transition-colors duration-300">Acessórios</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="produtos" class="py-16 sm:py-24 bg-vulcan-light">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 gsap-reveal-section">
+                <h2 class="text-3xl md:text-4xl font-black tracking-tighter text-vulcan-dark">Vitrine VULCAN</h2>
+                <p class="mt-2 text-gray-600 max-w-md mx-auto">Os mais vendidos e as últimas novidades.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10">
+                <div class="product-card group gsap-reveal-section">
+                    <div class="relative w-full overflow-hidden rounded-lg bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?q=80&w=1887&auto=format&fit=crop" alt="Camiseta VULCAN Básica" loading="lazy" class="w-full h-full object-cover object-center aspect-[3/4] group-hover:opacity-75 transition-opacity duration-300">
+                    </div>
+                    <div class="mt-4 text-center">
+                        <h3 class="text-sm font-medium text-gray-800">Camiseta VULCAN Básica</h3>
+                        <p class="mt-1 text-lg font-bold text-vulcan-dark">R$ 99,90</p>
+                    </div>
+                    <div class="mt-4">
+                        <button class="w-full bg-vulcan-dark text-white py-2 px-4 rounded-full font-bold hover:bg-vulcan-accent transition-colors duration-300 transform opacity-0 group-hover:opacity-100 -translate-y-2 group-hover:translate-y-0">
+                            Comprar
+                        </button>
+                    </div>
+                </div>
+                <div class="product-card group gsap-reveal-section">
+                    <div class="relative w-full overflow-hidden rounded-lg bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=2070&auto=format&fit=crop" alt="Tênis VULCAN Runner" loading="lazy" class="w-full h-full object-cover object-center aspect-[3/4] group-hover:opacity-75 transition-opacity duration-300">
+                    </div>
+                    <div class="mt-4 text-center">
+                        <h3 class="text-sm font-medium text-gray-800">Tênis VULCAN Runner</h3>
+                        <p class="mt-1 text-lg font-bold text-vulcan-dark">R$ 349,90</p>
+                    </div>
+                    <div class="mt-4">
+                        <button class="w-full bg-vulcan-dark text-white py-2 px-4 rounded-full font-bold hover:bg-vulcan-accent transition-colors duration-300 transform opacity-0 group-hover:opacity-100 -translate-y-2 group-hover:translate-y-0">
+                            Comprar
+                        </button>
+                    </div>
+                </div>
+                <div class="product-card group gsap-reveal-section">
+                    <div class="relative w-full overflow-hidden rounded-lg bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=1887&auto=format&fit=crop" alt="Jaqueta Jeans VULCAN" loading="lazy" class="w-full h-full object-cover object-center aspect-[3/4] group-hover:opacity-75 transition-opacity duration-300">
+                    </div>
+                    <div class="mt-4 text-center">
+                        <h3 class="text-sm font-medium text-gray-800">Jaqueta Jeans VULCAN</h3>
+                        <p class="mt-1 text-lg font-bold text-vulcan-dark">R$ 279,90</p>
+                    </div>
+                    <div class="mt-4">
+                        <button class="w-full bg-vulcan-dark text-white py-2 px-4 rounded-full font-bold hover:bg-vulcan-accent transition-colors duration-300 transform opacity-0 group-hover:opacity-100 -translate-y-2 group-hover:translate-y-0">
+                            Comprar
+                        </button>
+                    </div>
+                </div>
+                <div class="product-card group gsap-reveal-section">
+                    <div class="relative w-full overflow-hidden rounded-lg bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1620799140188-3b2a02fd9a77?q=80&w=1972&auto=format&fit=crop" alt="Moletom VULCAN Comfort" loading="lazy" class="w-full h-full object-cover object-center aspect-[3/4] group-hover:opacity-75 transition-opacity duration-300">
+                    </div>
+                    <div class="mt-4 text-center">
+                        <h3 class="text-sm font-medium text-gray-800">Moletom VULCAN Comfort</h3>
+                        <p class="mt-1 text-lg font-bold text-vulcan-dark">R$ 229,90</p>
+                    </div>
+                    <div class="mt-4">
+                        <button class="w-full bg-vulcan-dark text-white py-2 px-4 rounded-full font-bold hover:bg-vulcan-accent transition-colors duration-300 transform opacity-0 group-hover:opacity-100 -translate-y-2 group-hover:translate-y-0">
+                            Comprar
+                        </button>
+                    </div>
+                </div>
+                <div class="product-card group gsap-reveal-section">
+                    <div class="relative w-full overflow-hidden rounded-lg bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?q=80&w=2070&auto=format&fit=crop" alt="Óculos VULCAN Aviador" loading="lazy" class="w-full h-full object-cover object-center aspect-[3/4] group-hover:opacity-75 transition-opacity duration-300">
+                    </div>
+                    <div class="mt-4 text-center">
+                        <h3 class="text-sm font-medium text-gray-800">Óculos VULCAN Aviador</h3>
+                        <p class="mt-1 text-lg font-bold text-vulcan-dark">R$ 189,90</p>
+                    </div>
+                    <div class="mt-4">
+                        <button class="w-full bg-vulcan-dark text-white py-2 px-4 rounded-full font-bold hover:bg-vulcan-accent transition-colors duration-300 transform opacity-0 group-hover:opacity-100 -translate-y-2 group-hover:translate-y-0">
+                            Comprar
+                        </button>
+                    </div>
+                </div>
+                <div class="product-card group gsap-reveal-section">
+                    <div class="relative w-full overflow-hidden rounded-lg bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?q=80&w=1964&auto=format&fit=crop" alt="Sapato Social VULCAN" loading="lazy" class="w-full h-full object-cover object-center aspect-[3/4] group-hover:opacity-75 transition-opacity duration-300">
+                    </div>
+                    <div class="mt-4 text-center">
+                        <h3 class="text-sm font-medium text-gray-800">Sapato Social VULCAN</h3>
+                        <p class="mt-1 text-lg font-bold text-vulcan-dark">R$ 299,90</p>
+                    </div>
+                    <div class="mt-4">
+                        <button class="w-full bg-vulcan-dark text-white py-2 px-4 rounded-full font-bold hover:bg-vulcan-accent transition-colors duration-300 transform opacity-0 group-hover:opacity-100 -translate-y-2 group-hover:translate-y-0">
+                            Comprar
+                        </button>
+                    </div>
+                </div>
+                <div class="product-card group gsap-reveal-section">
+                    <div class="relative w-full overflow-hidden rounded-lg bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=1915&auto=format&fit=crop" alt="Camiseta VULCAN Longline" loading="lazy" class="w-full h-full object-cover object-center aspect-[3/4] group-hover:opacity-75 transition-opacity duration-300">
+                    </div>
+                    <div class="mt-4 text-center">
+                        <h3 class="text-sm font-medium text-gray-800">Camiseta VULCAN Longline</h3>
+                        <p class="mt-1 text-lg font-bold text-vulcan-dark">R$ 119,90</p>
+                    </div>
+                    <div class="mt-4">
+                        <button class="w-full bg-vulcan-dark text-white py-2 px-4 rounded-full font-bold hover:bg-vulcan-accent transition-colors duration-300 transform opacity-0 group-hover:opacity-100 -translate-y-2 group-hover:translate-y-0">
+                            Comprar
+                        </button>
+                    </div>
+                </div>
+                <div class="product-card group gsap-reveal-section">
+                    <div class="relative w-full overflow-hidden rounded-lg bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?q=80&w=1898&auto=format&fit=crop" alt="Tênis VULCAN Classic" loading="lazy" class="w-full h-full object-cover object-center aspect-[3/4] group-hover:opacity-75 transition-opacity duration-300">
+                    </div>
+                    <div class="mt-4 text-center">
+                        <h3 class="text-sm font-medium text-gray-800">Tênis VULCAN Classic</h3>
+                        <p class="mt-1 text-lg font-bold text-vulcan-dark">R$ 199,90</p>
+                    </div>
+                    <div class="mt-4">
+                        <button class="w-full bg-vulcan-dark text-white py-2 px-4 rounded-full font-bold hover:bg-vulcan-accent transition-colors duration-300 transform opacity-0 group-hover:opacity-100 -translate-y-2 group-hover:translate-y-0">
+                            Comprar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="novidades" class="bg-vulcan-dark">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 text-center">
+            <div class="gsap-reveal-section">
+                <h2 class="text-3xl md:text-4xl font-black tracking-tighter text-white uppercase">
+                    15% OFF NA PRIMEIRA COMPRA
+                </h2>
+                <p class="mt-4 max-w-2xl mx-auto text-gray-300">
+                    Cadastre-se em nossa newsletter e receba acesso antecipado a lançamentos, promoções exclusivas e muito mais.
+                </p>
+                <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+                    <input type="email" placeholder="Seu melhor e-mail" class="w-full px-5 py-3 rounded-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-vulcan-accent">
+                    <button class="bg-vulcan-accent text-white font-bold py-3 px-8 rounded-full hover:bg-red-700 transition-colors duration-300 flex-shrink-0">
+                        Cadastrar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="bg-white border-t border-gray-200">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="col-span-1 md:col-span-2">
+                <h3 class="text-xl font-black tracking-tighter text-vulcan-dark uppercase">VULCAN</h3>
+                <p class="mt-4 text-gray-500 max-w-xs">Moda com atitude, feita para durar. Criamos peças que contam histórias e definem estilos.</p>
+            </div>
+            <div>
+                <h4 class="font-bold text-gray-800">Links Úteis</h4>
+                <ul class="mt-4 space-y-2 text-sm text-gray-500">
+                    <li><a href="#" class="hover:text-vulcan-accent">Sobre Nós</a></li>
+                    <li><a href="#" class="hover:text-vulcan-accent">FAQ</a></li>
+                    <li><a href="#" class="hover:text-vulcan-accent">Política de Trocas</a></li>
+                    <li><a href="#" class="hover:text-vulcan-accent">Contato</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-gray-800">Siga-nos</h4>
+                <div class="mt-4 flex space-x-4">
+                    <a href="#" aria-label="Tiktok" class="text-gray-400 hover:text-vulcan-accent">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tiktok" viewBox="0 0 16 16">
+                            <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"/>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Instagram" class="text-gray-400 hover:text-vulcan-accent">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="WhatsApp" class="text-gray-400 hover:text-vulcan-accent">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                            <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="mt-8 border-t border-gray-200 pt-8 text-center text-sm text-gray-500">
+            <p>&copy; 2025 VULCAN. Todos os direitos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        // --- MENU MOBILE ---
+        // Seleciona os elementos do menu hambúrguer
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        // Adiciona o evento de clique ao botão
+        mobileMenuButton.addEventListener('click', () => {
+            // Alterna a classe 'hidden' para mostrar/esconder o menu
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Fecha o menu ao clicar em um link (melhora a UX)
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+
+        // --- ANIMAÇÕES COM GSAP ---
+        gsap.registerPlugin(ScrollTrigger);
+
+        // 1. Animação de entrada do Hero Section
+        // Seleciona todos os elementos com a classe .gsap-reveal dentro do hero
+        const heroElements = document.querySelectorAll('.hero-section .gsap-reveal');
+        // Anima cada elemento com um efeito de fade + slide para cima
+        gsap.from(heroElements, {
+            delay: 0.2,
+            duration: 0.8,
+            opacity: 1,
+            y: 40, // Começa 40px abaixo
+            ease: 'power3.out',
+            stagger: 0.2 // Cria um efeito escalonado entre os elementos
+        });
+        // Torna os elementos visíveis após a configuração da animação
+        gsap.to(heroElements, { opacity: 1, visibility: 'visible' });
+
+        // 2. Animação de Scroll Reveal para as seções
+        // Seleciona todas as seções que devem ter a animação
+        const revealSections = document.querySelectorAll('.gsap-reveal-section');
+        revealSections.forEach((section) => {
+            // Inicia os elementos como invisíveis
+            gsap.set(section, { opacity: 0, y: 50, visibility: 'hidden' });
+
+            ScrollTrigger.create({
+                trigger: section,
+                start: 'top 85%', // A animação começa quando 85% do topo da seção entra na viewport
+                end: 'bottom 20%',
+                onEnter: () => gsap.to(section, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: 'power3.out',
+                    visibility: 'visible'
+                }),
+                // Opcional: reverter a animação ao sair da tela
+                // onLeaveBack: () => gsap.to(section, { opacity: 0, y: 50, duration: 0.5, ease: 'power3.in' }),
+            });
+        });
+
+        // 3. Animação de hover nos cards de produto
+        // Não é necessário GSAP aqui, Tailwind e CSS puro são mais performáticos para hovers simples.
+        // A animação do botão 'Comprar' foi feita com as classes `group-hover` do Tailwind.
+        // Poderíamos adicionar um hover mais complexo com GSAP se necessário, por exemplo:
+        const productCards = document.querySelectorAll('.product-card');
+        productCards.forEach(card => {
+            const image = card.querySelector('img');
+
+            // Animação sutil na imagem do produto com GSAP
+            const timeline = gsap.timeline({ paused: true });
+            timeline.to(image, { scale: 1.05, duration: 0.4, ease: 'power1.inOut' });
+
+            card.addEventListener('mouseenter', () => timeline.play());
+            card.addEventListener('mouseleave', () => timeline.reverse());
+        });
+
+    });
+</script>
+
+</body>
+</html>

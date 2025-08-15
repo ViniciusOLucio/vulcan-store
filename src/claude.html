@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- SEO Meta Tags -->
+    <title>VULCAN | Moda Contemporânea - Roupas Masculinas e Femininas</title>
+    <meta name="description" content="Descubra a coleção exclusiva VULCAN. Roupas modernas, qualidade premium e estilo único. Frete grátis acima de R$ 299. Compre agora!">
+    <meta name="keywords" content="roupas, moda, fashion, vulcan, masculino, feminino, acessórios, tendências">
+    <meta name="author" content="VULCAN Fashion">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vulcanfashion.com.br/">
+    <meta property="og:title" content="VULCAN | Moda Contemporânea">
+    <meta property="og:description" content="Descubra a coleção exclusiva VULCAN. Roupas modernas e estilo único.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=1200">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://vulcanfashion.com.br/">
+    <meta property="twitter:title" content="VULCAN | Moda Contemporânea">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🔥</text></svg>">
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- GSAP via CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <style>
+        /* Custom styles para animações e elementos específicos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Previne CLS - Layout Shift */
+        img {
+            aspect-ratio: attr(width) / attr(height);
+            width: 100%;
+            height: auto;
+        }
+
+        /* Scroll suave */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading skeleton para imagens */
+        .skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        /* Hover effect nos cards */
+        .product-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .product-card img {
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Menu mobile animation */
+        .menu-transition {
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Hero gradient overlay */
+        .hero-gradient {
+            background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.5) 100%);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        /* Botão flutuante WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 40;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900 font-sans antialiased">
+
+<!-- Header Fixo -->
+<header class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50 transition-all duration-300" id="header">
+    <div class="container mx-auto px-4">
+        <nav class="flex items-center justify-between h-16 lg:h-20">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="#" class="text-2xl lg:text-3xl font-bold tracking-wider text-gray-900 hover:text-gray-700 transition-colors">
+                    VULCAN
+                </a>
+            </div>
+
+            <!-- Menu Desktop -->
+            <div class="hidden lg:flex items-center space-x-8">
+                <a href="#categorias" class="text-gray-700 hover:text-black transition-colors font-medium">Categorias</a>
+                <a href="#produtos" class="text-gray-700 hover:text-black transition-colors font-medium">Produtos</a>
+                <a href="#promocoes" class="text-gray-700 hover:text-black transition-colors font-medium">Promoções</a>
+                <a href="#contato" class="text-gray-700 hover:text-black transition-colors font-medium">Contato</a>
+            </div>
+
+            <!-- Icons e Menu Mobile -->
+            <div class="flex items-center space-x-4">
+                <!-- Busca -->
+                <button class="p-2 hover:bg-gray-100 rounded-full transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                </button>
+
+                <!-- Carrinho -->
+                <button class="p-2 hover:bg-gray-100 rounded-full transition-colors relative">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+                    </svg>
+                    <span class="absolute -top-1 -right-1 bg-black text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">3</span>
+                </button>
+
+                <!-- Menu Hamburger Mobile -->
+                <button id="menu-toggle" class="lg:hidden p-2 hover:bg-gray-100 rounded-full transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Menu Mobile (oculto por padrão) -->
+        <div id="mobile-menu" class="lg:hidden menu-transition max-h-0 overflow-hidden">
+            <div class="py-4 border-t border-gray-200">
+                <a href="#categorias" class="block py-2 text-gray-700 hover:text-black transition-colors font-medium">Categorias</a>
+                <a href="#produtos" class="block py-2 text-gray-700 hover:text-black transition-colors font-medium">Produtos</a>
+                <a href="#promocoes" class="block py-2 text-gray-700 hover:text-black transition-colors font-medium">Promoções</a>
+                <a href="#contato" class="block py-2 text-gray-700 hover:text-black transition-colors font-medium">Contato</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<main class="pt-16 lg:pt-20">
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0">
+            <img
+                    src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1920&h=1080&fit=crop"
+                    alt="VULCAN Fashion Collection"
+                    class="w-full h-full object-cover"
+                    loading="eager"
+                    width="1920"
+                    height="1080"
+            >
+            <div class="hero-gradient absolute inset-0"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 container mx-auto px-4 text-center text-white">
+            <h1 class="hero-title text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                Nova Coleção<br>
+                <span class="text-3xl md:text-4xl lg:text-5xl font-light">Outono/Inverno 2024</span>
+            </h1>
+            <p class="hero-subtitle text-lg md:text-xl mb-8 max-w-2xl mx-auto opacity-90">
+                Descubra peças exclusivas que combinam estilo, conforto e atitude. Vista-se com a força de VULCAN.
+            </p>
+            <div class="hero-cta flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#produtos" class="bg-white text-black px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all transform hover:scale-105">
+                    Comprar Agora
+                </a>
+                <a href="#categorias" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-black transition-all">
+                    Ver Categorias
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Categorias Section -->
+    <section id="categorias" class="py-16 lg:py-24 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="section-title text-3xl lg:text-4xl font-bold mb-4">Explore por Categoria</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Encontre o estilo perfeito para cada momento</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                <!-- Categoria Masculino -->
+                <div class="category-card group relative overflow-hidden rounded-lg cursor-pointer">
+                    <div class="aspect-[3/4] overflow-hidden">
+                        <img
+                                src="https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?w=600&h=800&fit=crop"
+                                alt="Moda Masculina"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                loading="lazy"
+                                width="600"
+                                height="800"
+                        >
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+                        <div class="text-white">
+                            <h3 class="text-2xl font-bold mb-2">Masculino</h3>
+                            <p class="text-sm opacity-90">Estilo e conforto</p>
+                            <button class="mt-4 bg-white text-black px-6 py-2 rounded-full text-sm font-semibold hover:bg-gray-100 transition-colors">
+                                Explorar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Categoria Feminino -->
+                <div class="category-card group relative overflow-hidden rounded-lg cursor-pointer">
+                    <div class="aspect-[3/4] overflow-hidden">
+                        <img
+                                src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&h=800&fit=crop"
+                                alt="Moda Feminina"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                loading="lazy"
+                                width="600"
+                                height="800"
+                        >
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+                        <div class="text-white">
+                            <h3 class="text-2xl font-bold mb-2">Feminino</h3>
+                            <p class="text-sm opacity-90">Elegância e atitude</p>
+                            <button class="mt-4 bg-white text-black px-6 py-2 rounded-full text-sm font-semibold hover:bg-gray-100 transition-colors">
+                                Explorar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Categoria Acessórios -->
+                <div class="category-card group relative overflow-hidden rounded-lg cursor-pointer">
+                    <div class="aspect-[3/4] overflow-hidden">
+                        <img
+                                src="https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?w=600&h=800&fit=crop"
+                                alt="Acessórios"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                loading="lazy"
+                                width="600"
+                                height="800"
+                        >
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+                        <div class="text-white">
+                            <h3 class="text-2xl font-bold mb-2">Acessórios</h3>
+                            <p class="text-sm opacity-90">Detalhes que importam</p>
+                            <button class="mt-4 bg-white text-black px-6 py-2 rounded-full text-sm font-semibold hover:bg-gray-100 transition-colors">
+                                Explorar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Produtos Section -->
+    <section id="produtos" class="py-16 lg:py-24">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="section-title text-3xl lg:text-4xl font-bold mb-4">Produtos em Destaque</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Peças selecionadas especialmente para você</p>
+            </div>
+
+            <!-- Filtros -->
+            <div class="flex flex-wrap justify-center gap-2 mb-8">
+                <button class="px-6 py-2 bg-black text-white rounded-full text-sm font-medium hover:bg-gray-800 transition-colors">Todos</button>
+                <button class="px-6 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors">Novidades</button>
+                <button class="px-6 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors">Mais Vendidos</button>
+                <button class="px-6 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors">Promoções</button>
+            </div>
+
+            <!-- Grid de Produtos -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Produto 1 -->
+                <div class="product-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl">
+                    <div class="relative aspect-[3/4] overflow-hidden bg-gray-100">
+                        <img
+                                src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=533&fit=crop"
+                                alt="Camiseta Premium"
+                                class="w-full h-full object-cover"
+                                loading="lazy"
+                                width="400"
+                                height="533"
+                        >
+                        <div class="absolute top-2 left-2 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                            -30%
+                        </div>
+                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <button class="bg-white text-black px-6 py-3 rounded-full font-semibold transform -translate-y-2 group-hover:translate-y-0 transition-all">
+                                Compra Rápida
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg mb-2">Camiseta Premium VULCAN</h3>
+                        <p class="text-gray-600 text-sm mb-3">100% Algodão Orgânico</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-gray-400 line-through text-sm">R$ 149,90</span>
+                                <span class="text-xl font-bold ml-2">R$ 104,90</span>
+                            </div>
+                            <button class="p-2 hover:bg-gray-100 rounded-full transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 2 -->
+                <div class="product-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl">
+                    <div class="relative aspect-[3/4] overflow-hidden bg-gray-100">
+                        <img
+                                src="https://images.unsplash.com/photo-1562157873-818bc0726f68?w=400&h=533&fit=crop"
+                                alt="Jaqueta Jeans"
+                                class="w-full h-full object-cover"
+                                loading="lazy"
+                                width="400"
+                                height="533"
+                        >
+                        <div class="absolute top-2 left-2 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                            Novo
+                        </div>
+                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <button class="bg-white text-black px-6 py-3 rounded-full font-semibold transform -translate-y-2 group-hover:translate-y-0 transition-all">
+                                Compra Rápida
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg mb-2">Jaqueta Jeans Oversized</h3>
+                        <p class="text-gray-600 text-sm mb-3">Denim Premium</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-xl font-bold">R$ 289,90</span>
+                            </div>
+                            <button class="p-2 hover:bg-gray-100 rounded-full transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 3 -->
+                <div class="product-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl">
+                    <div class="relative aspect-[3/4] overflow-hidden bg-gray-100">
+                        <img
+                                src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=400&h=533&fit=crop"
+                                alt="Vestido Midi"
+                                class="w-full h-full object-cover"
+                                loading="lazy"
+                                width="400"
+                                height="533"
+                        >
+                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <button class="bg-white text-black px-6 py-3 rounded-full font-semibold transform -translate-y-2 group-hover:translate-y-0 transition-all">
+                                Compra Rápida
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg mb-2">Vestido Midi Floral</h3>
+                        <p class="text-gray-600 text-sm mb-3">Viscose Premium</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-xl font-bold">R$ 229,90</span>
+                            </div>
+                            <button class="p-2 hover:bg-gray-100 rounded-full transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 4 -->
+                <div class="product-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl">
+                    <div class="relative aspect-[3/4] overflow-hidden bg-gray-100">
+                        <img
+                                src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=400&h=533&fit=crop"
+                                alt="Tênis Casual"
+                                class="w-full h-full object-cover"
+                                loading="lazy"
+                                width="400"
+                                height="533"
+                        >
+                        <div class="absolute top-2 left-2 bg-yellow-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                            Últimas Peças
+                        </div>
+                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <button class="bg-white text-black px-6 py-3 rounded-full font-semibold transform -translate-y-2 group-hover:translate-y-0 transition-all">
+                                Compra Rápida
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg mb-2">Tênis VULCAN Sport</h3>
+                        <p class="text-gray-600 text-sm mb-3">Conforto máximo</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-xl font-bold">R$ 399,90</span>
+                            </div>
+                            <button class="p-2 hover:bg-gray-100 rounded-full transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 5 -->
+                <div class="product-card group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl">
+                    <div class="relative aspect-[3/4] overflow-hidden bg-gray-100">
+                        <img
+                                src="https://images.unsplash.com/photo-1578587018452-892bacefd3f6?w=400&h=533&fit=crop"
+                                alt="Calça Alfaiataria"
+                                class="w-full h-full object-cover"
+                                loading="lazy"
+                                width="400"
+                                height="533"
+                        >
+                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <button class="bg-white text-black px-6 py-3 rounded-full font-semibold transform -translate-y-2 group-hover:translate-y-0 transition-all">
+                                Compra Rápida
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg mb-2">Calça Alfaiataria Slim</h3>
+                        <p class="text-gray-600 text-sm mb
